@@ -230,7 +230,7 @@ main {
 }
 
 main h1 {
-  font-size: 3.1em;
+  font-size: 1.8em;
   text-shadow: #000 0.05em 0.05em 0.05em;
 }
 
@@ -437,7 +437,7 @@ footer a {
   }
 
   main h1 {
-    font-size: 5.8em;
+    font-size: 3.3em;
   }
 
   main h2 {
@@ -464,7 +464,7 @@ footer a {
 
   /* Cabeçalho */
   header {
-    height: 135px;
+    height: 180px;
   }
 
   #logo img {
@@ -517,7 +517,7 @@ footer a {
   }
 
   main h1 {
-    font-size: 6.8em;
+    font-size: 3.8em;
   }
 
   /* Sobre */
