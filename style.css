@@ -1,0 +1,586 @@
+/*
+    Folha de estilo do site One Page HTML5 e CSS3
+    html5css3.com.br
+    @author Professor José de Assis
+    joseassis.com.br
+*/
+
+/* 
+Mais detalhes sobre Breakpoints CSS - Ponto de quebra
+https://www.hostinger.com.br/tutoriais/breakpoints-css?utm_campaign=Generic-Tutorials-DSA|NT:Se|LO:BR-t4&utm_medium=ppc&gad_source=1&gclid=Cj0KCQjw1qO0BhDwARIsANfnkv_2CQCitnoywINR7YAOPM_ep-VagiTfDJMKahr_c-fWIrNes1YSGiQaAmNGEALw_wcB
+*/
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
+
+/* Importação (Google Fonts) */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+/* CSS Reset */
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+html {
+  /* tipo de rolagem suave*/
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+}
+
+/* Layout */
+.Container {
+  /* Centraliza conteúdo */
+  margin: 0 auto;
+}
+
+.Flex,
+.Flex2,
+.Flex3,
+.Flex4,
+.Flex5,
+.Flex6 {
+  display: flex;
+}
+
+.Flex {
+  justify-content: space-between;
+}
+
+.Flex2 {
+  align-items: center;
+}
+
+.Flex3,
+.Flex6 {
+  flex-direction: column;
+}
+
+.Flex4 {
+  /* deixar os elementos alinhados e quando diminui a tela ele passa para baixo */
+  flex-wrap: wrap;
+  /* cria espaçamento uniforme */
+  justify-content: space-evenly;
+}
+
+.Flex5 {
+  flex-direction: column-reverse;
+}
+
+.Flex6 {
+  justify-content: space-around;
+}
+
+/* Botão */
+.Botao {
+  /* retirar sublinhado */
+  text-decoration: none;
+
+  color: #fff;
+  font-size: 1.3em;
+
+  /* consegue definir com 700 porque na importação da font foi definido 700&display=swap */
+  font-weight: 700;
+
+  background-color: #c00000;
+
+  /* quando usa dois parametros de espaçamento, ele define 10px para cima e para baixo e 40px para esquerda e para direita */
+  padding: 10px 40px;
+
+  border: 2px solid #fff;
+  border-radius: 25px;
+}
+
+/* topo do site  - no id chamado topo - fixa o botão no canto inferior direita*/
+#topo {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+
+/* Cartões */
+.Card {
+  margin-top: 25px;
+  width: 338px;
+  height: 520px;
+  background-color: #e8e8e8;
+  border: 1px solid #a1a1a1;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.Card img {
+  /* cantos arredondados na parte de cima */
+  border-radius: 25px 25px 0px 0px;
+}
+
+.Card h3 {
+  margin-top: 15px;
+}
+
+.Card p {
+  text-align: left;
+  color: #434343;
+  padding: 10px 30px 50px 30px;
+}
+
+.Card a {
+  padding: 10px 100px;
+  border: 0;
+}
+
+/* Smartphone Portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* Cabeçalho */
+header {
+  height: 60px;
+}
+
+#logo img {
+  /* reduzir tamanho da imagem */
+  width: 208px;
+  /* reduzir tamanho da imagem */
+  height: 130.25px;
+  margin-top: 10px;
+}
+
+#check {
+  display: none;
+}
+
+label {
+  font-size: 3em;
+
+  /* para fixar desenho de menu */
+  position: fixed;
+  top: 5px;
+  right: 15px;
+  
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* menu na tela do celular */
+nav ul {
+  /* elimina ponto antes dos itens */
+  list-style: none;
+  /* para deixar o menu transparente, para mudar grau de transparencia, alterar o 4o número do rgba */
+  background-color: rgba(52, 53, 56, 0.95);
+  /* altura para tela inteira */
+  height: 100vh;
+  /* quando utiliza position: fixed, esse elemento não interage com outros elementos, ele fica uma camada acima demais elementos */
+  position: fixed;
+  top: 60px;
+  /* para esconder menu */
+  right: -65%;
+  width: 65%;
+  transition: all 0.5s;
+}
+
+/* para associar check do menu com ul */
+#check:checked~ul {
+  right: 0;
+}
+
+/* configuração da caixa do item */
+nav ul li {
+  /* espaço entre os itens */
+  padding: 20px;
+  /* cor da borda */
+  border-bottom: 1px solid #a9a9a9;
+  text-align: right;
+}
+
+/* configuração do link do item */
+nav ul li a {
+  /* eliminar sublinhado */
+  text-decoration: none;
+  color: #fff;
+}
+
+
+/* Destaque */
+main {
+  /* 51vh equivale a 51% da tela, indenpendente do dispositivo*/
+  height: 51vh;
+
+  /* inserir uma imagem no fundo */
+  background: url(img/banner.jpg);
+
+  /* para cobrir imagem a tela do dispositivo */
+  background-size: cover;
+  background-position: center;
+
+  /* S */
+  color: #fff;
+
+  /* técnica para centralizar, tanto na horizontal e no vertical, em uma coluna de elementos */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 3.1em;
+  text-shadow: #000 0.05em 0.05em 0.05em;
+}
+
+main h2 {
+  font-size: 1.25em;
+  margin-bottom: 40px;
+  text-shadow: 0px 5px 10px #000,
+    0px 10px 10px rgba(0, 0, 0, 0.15),
+    0px 15px 15px rgba(0, 0, 0, 0.1),
+    0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Sobre */
+#sobre {
+  padding: 50px 0px;
+  background: url(img/background.png);
+  background-size: cover;
+  background-position: center;
+}
+
+#destaqueSobre {
+  display: none;
+}
+
+#textoSobre {
+  color: #fff;
+  padding: 0px 10px;
+}
+
+#textoSobre h2 {
+  margin-bottom: 10px;
+}
+
+.TopicosSobre {
+  margin-top: 20px;
+}
+
+.TopicosSobre img {
+  margin-right: 10px;
+}
+
+/* One page */
+#onepage {
+  padding: 50px 10px;
+}
+
+#onepage h2 {
+  margin-bottom: 10px;
+}
+
+#onepage p {
+  margin-bottom: 25px;
+}
+
+#video iframe {
+  width: 340px;
+  height: 191px;
+  border: 0;
+}
+
+/* Wireframe */
+#wireframe {
+  padding: 50px 0px;
+  background: url(img/background.png);
+
+  /* para centralizar */
+  background-size: cover;
+  background-position: center;
+  
+}
+
+#textoWire {
+  color: #fff;
+  padding: 0px 10px;
+}
+
+#textoWire h2 {
+  margin-bottom: 10px;
+}
+
+#textoWire p {
+  margin-bottom: 40px;
+}
+
+#textoWire span {
+  display: none;
+}
+
+#qrcode {
+  display: none;
+}
+
+/* Conteúdo */
+#conteudo {
+  padding: 50px 0px;
+}
+
+#conteudo h2 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#todos {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#todos a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.25em;
+}
+
+/* Rodapé */
+address {
+  padding: 35px 10px 50px 10px;
+  background: url(img/background2.png);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+address a {
+  text-decoration: none;
+  color: #fff;
+}
+
+address img {
+  padding-top: 15px;
+}
+
+#iconeLocal {
+  display: none;
+}
+
+#dados {
+  margin: 30px 0px 15px 0px;
+}
+
+#googleMaps {
+  display: none;
+}
+
+footer {
+  padding: 50px 0px;
+  background-color: #343538;
+  font-size: 0.875em;
+  color: #fff;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#social {
+  margin-bottom: 25px;
+}
+
+/* Smartphone Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 576px) {
+
+  /* Layout */
+  .Container {
+    max-width: 540px;
+  }
+
+  /* Destaque */
+  main {
+    height: 77vh;
+  }
+
+  /* One page */
+  #video iframe {
+    width: 560px;
+    height: 315px;
+  }
+
+  /* Rodapé */
+  .Flex5 {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #social {
+    margin: 0;
+  }
+}
+
+/* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 768px) {
+
+  /* Layout */
+  .Container {
+    max-width: 720px;
+  }
+
+  /* Destaque */
+  main {
+    height: 50vh;
+  }
+
+  main h1 {
+    font-size: 5.8em;
+  }
+
+  main h2 {
+    font-size: 2.3em;
+  }
+}
+
+/* Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 992px) {
+
+  /* Layout */
+  .Container {
+    max-width: 960px;
+  }
+}
+
+/* PC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 1200px) {
+
+  /* Layout */
+  .Container {
+    max-width: 1140px;
+  }
+
+  /* Cabeçalho */
+  header {
+    height: 135px;
+  }
+
+  #logo img {
+    width: 416px;
+    height: 260.5px;
+    margin-top: 20px;
+  }
+
+  label {
+    display: none;
+  }
+
+  nav ul {
+    /* usando position: static, ele ignora position: fixed, top:, right: do css anterior */
+    position: static;
+
+    /* por ter alterado para tela do celular, os itens do menu desapareceram, foi usado para celular width 65% */
+    /* alterar para tela do pc para 100% */
+    width: 100%;
+
+    /* ele retira altua maxima do documento para automático, la na tela do celular estava height: 100vh; */
+    height: auto;
+
+    /* para deixar sem cor do backgroud */
+    background-color: transparent;
+
+    /* para descer os elementos com relação margem do topo*/
+    margin-top: 40px;
+  }
+
+  nav ul li {
+    /* os elementos vão flutuar a esquerda */
+    float: left;
+    /* retirar as bordas */
+    border: 0;
+  }
+
+  nav ul li a {
+    color: #343538;
+  }
+
+  /* quando coloca mouse em cima dos links muda para vermelho */
+  nav ul li a:hover {
+    color: #c00000;
+  }
+
+  /* Destaque */
+  main {
+    height: 60vh;
+  }
+
+  main h1 {
+    font-size: 6.8em;
+  }
+
+  /* Sobre */
+  #sobre {
+    /* efeito de rolagem parallax */
+    background-attachment: fixed;
+  }
+
+  #destaqueSobre {
+    display: inline;
+  }
+
+  #destaqueSobre img {
+    border-radius: 50%;
+    margin-right: 50px;
+  }
+
+  /* One page */
+  .Flex3 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Wireframe */
+  #wireframe {
+    /* efeito de rolagem parallax e continuação da imagem do fundo*/
+    background-attachment: fixed;
+  }
+
+  #wireframe span {
+    /* mostrar texto */
+    display: inline;
+  }
+
+  #qrcode {
+    /* mostrar qrcode */
+    display: inline;
+  }
+
+  #qrcode img {
+    /* reduzir tamanho */
+    width: 225px;
+    height: 225px;
+  }
+
+  /* Rodapé */
+  .Flex6 {
+    flex-direction: row-reverse;
+  }
+
+  address {
+    padding-top: 50px;
+  }
+
+  #iconeLocal {
+    display: inline;
+  }
+
+  #iconeMapa {
+    display: none;
+  }
+
+  #googleMaps {
+    display: inline;
+  }
+}

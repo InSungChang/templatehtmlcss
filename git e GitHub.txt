@@ -1,0 +1,25 @@
+git e GitHub
+
+Para remover remote origin:
+Git remote remove origin
+
+verificar quais rmeote está ativa:
+git remote -v
+
+verificar status dos arquivos alterados e adicionados:
+git status
+
+adicionar todos os arquivos alterados e adicionados:
+git add .
+
+roda mais uma vez para verificar se aparece lista de arquivos alterados ou adicionados:
+git status
+
+para adicionar comentário e commitar (comprometer):
+git commit -m "Estrutura do site"
+
+para sincronizar no GitHub:
+git push
+
+para sincronizar no git e no github:
+git pull
